@@ -34,6 +34,17 @@ Also, if you want to add features to this, please fork or throw me a pull reques
 - Upvoting
 - Favoriting/saving
 
+## Getting Started
+
+To build it yourself, simply run the command `pod install` in Terminal, then open the `HackerNewsReader.xcworkspace` in Xcode and hit Run.
+
+**IMPORTANT:** If you do not have an Apple ID with a developer account for code signing iOS apps, the build will fail with a code signing error. If you have a developer account, you can create the file "Xcode-Configurations/DEVELOPMENT_TEAM.xcconfig" with the following build setting as its content:
+> DEVELOPMENT_TEAM = [Your TeamID]
+
+For a more detailed description of this, you can have a look at the comments at the end of the file "Xcode-Configurations/Base.xcconfig". 
+
+
+
 ## Contact
 
 You can find me on Twitter at [@_ryannystrom](https://twitter.com/_ryannystrom).

@@ -82,6 +82,8 @@
 		29EA87DE1DD7AC9200B6F84A /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EA87DD1DD7AC9200B6F84A /* libxml2.2.tbd */; };
 		29EA87E51DD7ACFC00B6F84A /* NSURL+HackerNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EA87E11DD7ACF300B6F84A /* NSURL+HackerNewsTests.m */; };
 		58FBF42904A3BAC63095A11D /* Pods_HackerNewsReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E97AC09D67B152186BF4B6 /* Pods_HackerNewsReader.framework */; };
+		D7176311252DEAE1006312CD /* DEVELOPMENT_TEAM.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D717630F252DEAE1006312CD /* DEVELOPMENT_TEAM.xcconfig */; };
+		D7176312252DEAE1006312CD /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D7176310252DEAE1006312CD /* Shared.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -244,6 +246,8 @@
 		29EA87E01DD7ACF300B6F84A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29EA87E11DD7ACF300B6F84A /* NSURL+HackerNewsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+HackerNewsTests.m"; sourceTree = "<group>"; };
 		D231C5C33344FF1151733EC4 /* Pods-HackerNewsReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackerNewsReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackerNewsReader/Pods-HackerNewsReader.release.xcconfig"; sourceTree = "<group>"; };
+		D717630F252DEAE1006312CD /* DEVELOPMENT_TEAM.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DEVELOPMENT_TEAM.xcconfig; sourceTree = "<group>"; };
+		D7176310252DEAE1006312CD /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		D8AA24FB5C8D7138D6A5225A /* Pods-HackerNewsReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackerNewsReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackerNewsReader/Pods-HackerNewsReader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -271,6 +275,7 @@
 		2990B2D71AD1FC600053DB80 = {
 			isa = PBXGroup;
 			children = (
+				D717630E252DEAE1006312CD /* Xcode-Configurations */,
 				29EA87DF1DD7ACF300B6F84A /* HackerNewsReaderTests */,
 				2990B3421AD1FDDE0053DB80 /* Classes */,
 				2990B2E51AD1FC600053DB80 /* main.m */,
@@ -553,6 +558,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D717630E252DEAE1006312CD /* Xcode-Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				D717630F252DEAE1006312CD /* DEVELOPMENT_TEAM.xcconfig */,
+				D7176310252DEAE1006312CD /* Shared.xcconfig */,
+			);
+			path = "Xcode-Configurations";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -609,7 +623,6 @@
 					};
 					2990B2DF1AD1FC600053DB80 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 523C4DWBTH;
 					};
 				};
 			};
@@ -662,10 +675,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7176311252DEAE1006312CD /* DEVELOPMENT_TEAM.xcconfig in Resources */,
 				29EA87D91DD7AACD00B6F84A /* Launch.storyboard in Resources */,
 				29EA87D71DD7AACD00B6F84A /* Images.xcassets in Resources */,
 				29EA87DA1DD7AACD00B6F84A /* Main.storyboard in Resources */,
 				29EA87D51DD7AACD00B6F84A /* fallback-queries.json in Resources */,
+				D7176312252DEAE1006312CD /* Shared.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -859,6 +874,7 @@
 		};
 		2990B3011AD1FC600053DB80 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7176310252DEAE1006312CD /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -905,6 +921,7 @@
 		};
 		2990B3021AD1FC600053DB80 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7176310252DEAE1006312CD /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -948,7 +965,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 523C4DWBTH;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -979,7 +995,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 523C4DWBTH;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
