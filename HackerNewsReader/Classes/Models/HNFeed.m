@@ -17,7 +17,7 @@ static NSString * const kHNFeedCreatedDate = @"kHNFeedCreatedDate";
 
 #pragma mark - Init
 
-- (instancetype)initWithItems:(NSArray *)items createdDate:(NSDate *)createdDate {
+- (instancetype)initWithItems:(NSArray<HNPost *> *)items createdDate:(NSDate *)createdDate {
     if (self = [super init]) {
         _items = [items copy] ?: @[];
         _createdDate = createdDate ?: [NSDate date];
@@ -39,8 +39,8 @@ static NSString * const kHNFeedCreatedDate = @"kHNFeedCreatedDate";
     return newFeed;
 }
 
-- (instancetype)feedByAppendingItems:(NSArray *)items {
-    NSArray *mergedItems = [self.items arrayByAddingObjectsFromArray:items];
+- (instancetype)feedByAppendingItems:(NSArray<HNPost *> *)items {
+    NSArray<HNPost *> *mergedItems = [self.items arrayByAddingObjectsFromArray:items];
     HNFeed *newFeed = [[HNFeed alloc] initWithItems:mergedItems createdDate:[self.createdDate copy]];
     return newFeed;
 }
@@ -49,7 +49,7 @@ static NSString * const kHNFeedCreatedDate = @"kHNFeedCreatedDate";
 #pragma mark - NSCoding
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    NSArray *items = [aDecoder decodeObjectForKey:kHNFeedItems];
+    NSArray<HNPost *> *items = [aDecoder decodeObjectForKey:kHNFeedItems];
     NSDate *createdDate = [aDecoder decodeObjectForKey:kHNFeedCreatedDate];
     return [self initWithItems:items createdDate:createdDate];
 }

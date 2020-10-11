@@ -8,6 +8,8 @@
 
 @import UIKit;
 
+@class HNPost;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @class HNReadPostStore;
@@ -17,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithOriginalController:(UIViewController *)viewController
                           andReadPostStore:(HNReadPostStore *)readPostStore NS_DESIGNATED_INITIALIZER;
 
-@property (nonatomic, copy) NSArray *posts;
+@property (nonatomic, copy) NSArray<HNPost *> *posts;
 
 @end
 

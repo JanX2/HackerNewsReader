@@ -8,6 +8,8 @@
 
 @import UIKit;
 
+@class HNPost;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @class HNReadPostStore, HNPostCell, HNFeed;
@@ -16,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithTableView:(UITableView *)tableView readPostStore:(nullable HNReadPostStore *)readPostStore;
 
-@property (nonatomic, copy) NSArray *posts;
+@property (nonatomic, copy) NSArray<HNPost *> *posts;
 
 - (HNPostCell *)cellForPostAtIndexPath:(NSIndexPath *)indexPath;
 

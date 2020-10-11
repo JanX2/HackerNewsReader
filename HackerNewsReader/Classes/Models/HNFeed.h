@@ -8,20 +8,22 @@
 
 @import Foundation;
 
+@class HNPost;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HNFeed : NSObject <NSCoding, NSCopying>
 
-@property (nonatomic, strong, readonly) NSArray *items;
+@property (nonatomic, strong, readonly) NSArray<HNPost *> *items;
 @property (nonatomic, strong, readonly) NSDate *createdDate;
 
-- (instancetype)initWithItems:(nullable NSArray *)items
+- (instancetype)initWithItems:(nullable NSArray<HNPost *> *)items
                   createdDate:(nullable NSDate *)createdDate NS_DESIGNATED_INITIALIZER;
 
 - (NSComparisonResult)compare:(HNFeed *)object;
 
 - (instancetype)feedByMergingFeed:(HNFeed *)feed;
-- (instancetype)feedByAppendingItems:(NSArray *)items;
+- (instancetype)feedByAppendingItems:(NSArray<HNPost *> *)items;
 
 - (id)init NS_UNAVAILABLE;
 

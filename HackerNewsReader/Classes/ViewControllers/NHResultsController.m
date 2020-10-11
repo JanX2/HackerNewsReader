@@ -55,7 +55,7 @@
     return self;
 }
 
-- (void)setPosts:(NSArray *)posts {
+- (void)setPosts:(NSArray<HNPost *> *)posts {
     self.feedDataSource.posts = posts;
     [self.tableView reloadData];
 }

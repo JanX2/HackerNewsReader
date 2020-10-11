@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class HNReadPostStore;
+@class HNReadPostStore, HNPost;
 
 @interface NHResultsController : UITableViewController
 
@@ -21,6 +21,6 @@
 - (instancetype)initWithOriginalController:(UIViewController *)viewController
                           andReadPostStore:(HNReadPostStore *)readPostStore NS_DESIGNATED_INITIALIZER;
 
-- (void)setPosts:(NSArray *)posts;
+- (void)setPosts:(NSArray<HNPost *> *)posts;
 
 @end
