@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithOriginalController:(UIViewController *)viewController
                           andReadPostStore:(HNReadPostStore *)readPostStore NS_DESIGNATED_INITIALIZER;
 
-@property(nonatomic, copy) NSArray *posts;
+@property (nonatomic, copy) NSArray *posts;
 
 @end
 
