@@ -38,8 +38,10 @@
 #pragma mark - UISearchResultsUpdating
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    NSString *query = searchController.searchBar.text.lowercaseString;
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@", query];
+    NSString *query = searchController.searchBar.text/*.lowercaseString*/;
+    NSPredicate *titlePredicate = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@", query];
+    NSPredicate *urlPredicate = [NSPredicate predicateWithFormat:@"URL.absoluteString CONTAINS[cd] %@", query];
+    NSPredicate *predicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[titlePredicate, urlPredicate]];
 
     NSArray *filteredPosts = [self.posts filteredArrayUsingPredicate:predicate];
 
