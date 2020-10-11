@@ -26,7 +26,7 @@ static NSString * const kHNFeedCreatedDate = @"kHNFeedCreatedDate";
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<%p %@ - %zi items, created: %@>",self,NSStringFromClass(self.class),self.items.count,self.createdDate];
+    return [NSString stringWithFormat:@"<%p %@ - %zi items, created: %@>", self, NSStringFromClass(self.class), self.items.count, self.createdDate];
 }
 
 
