@@ -607,7 +607,6 @@
 				2990B2DD1AD1FC600053DB80 /* Frameworks */,
 				2990B2DE1AD1FC600053DB80 /* Resources */,
 				27BA0891E290CD57634C0838 /* [CP] Embed Pods Frameworks */,
-				3977E3775A48C0ACABE8FC90 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -722,35 +721,18 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HackerNewsReader/Pods-HackerNewsReader-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-HackerNewsReader/Pods-HackerNewsReader-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Appirater/Appirater.framework",
-				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/TUSafariActivity/TUSafariActivity.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Appirater.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TUSafariActivity.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackerNewsReader/Pods-HackerNewsReader-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3977E3775A48C0ACABE8FC90 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackerNewsReader/Pods-HackerNewsReader-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HackerNewsReader/Pods-HackerNewsReader-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
