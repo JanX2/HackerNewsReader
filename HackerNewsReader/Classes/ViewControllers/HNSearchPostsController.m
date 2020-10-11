@@ -28,7 +28,7 @@
         self.searchResultsUpdater = self;
 
         if (@available(iOS 11.0, *)) {
-            [self themeSearchBar];
+            [self hn_themeSearchBar];
         }
     }
 
@@ -49,7 +49,8 @@
 
 #pragma mark - Private
 
-- (void)themeSearchBar {
+// hn_enableAppearance
+- (void)hn_themeSearchBar {
     self.searchBar.searchBarStyle = UISearchBarStyleMinimal;
     self.searchBar.backgroundColor = [UIColor clearColor];
 
