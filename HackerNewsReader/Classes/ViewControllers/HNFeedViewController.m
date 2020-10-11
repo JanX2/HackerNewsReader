@@ -105,7 +105,7 @@ static NSUInteger const kItemsPerPage = 30;
     [self.navigationController hn_setHidesBarsOnSwipe:NO navigationBarHidden:NO toolbarHidden:YES animated:animated];
     
     if (@available(iOS 11.0, *)) {
-        self.navigationItem.hidesSearchBarWhenScrolling = NO;
+        self.navigationItem.hidesSearchBarWhenScrolling = YES;
     }
 }
 
