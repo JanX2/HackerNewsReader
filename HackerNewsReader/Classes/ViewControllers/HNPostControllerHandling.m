@@ -6,13 +6,52 @@
 //  Copyright (c) 2015 Ryan Nystrom. All rights reserved.
 //
 
+#import <SafariServices/SafariServices.h>
+
 #import "HNPostControllerHandling.h"
 
 #import "HNPost.h"
 
-#import "HNWebViewController.h"
 #import "HNCommentViewController.h"
 #import "NSURL+HackerNews.h"
+
+#import "UIColor+HackerNews.h"
+
+void hn_enableAppearance(SFSafariViewController *safariVC) {
+    safariVC.preferredBarTintColor = [UIColor hn_brandColor];
+    safariVC.preferredControlTintColor = [UIColor hn_navigationTintColor];
+}
+
+SFSafariViewController *safariVCForURL(NSURL *url) {
+    SFSafariViewController *safariVC = nil;
+
+    if (@available(iOS 11.0, *)) {
+        SFSafariViewControllerConfiguration *configuration = [SFSafariViewControllerConfiguration new];
+        
+        //configuration.entersReaderIfAvailable = YES;
+        
+        if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
+            configuration.barCollapsingEnabled = YES;
+        }
+        else {
+            configuration.barCollapsingEnabled = NO;
+        }
+        
+        safariVC = [[SFSafariViewController alloc] initWithURL:url
+                                                 configuration:configuration];
+    }
+    else {
+        safariVC = [[SFSafariViewController alloc] initWithURL:url];
+    }
+    
+    hn_enableAppearance(safariVC);
+
+    if (@available(iOS 11.0, *)) {
+        safariVC.dismissButtonStyle = SFSafariViewControllerDismissButtonStyleClose;
+    }
+
+    return safariVC;
+}
 
 UIViewController *viewControllerForPost(HNPost *post) {
     UIViewController *controller;
@@ -20,8 +59,9 @@ UIViewController *viewControllerForPost(HNPost *post) {
         NSUInteger postID = [[post.URL hn_valueForQueryParameter:@"id"] integerValue];
         controller = [[HNCommentViewController alloc] initWithPostID:postID];
     } else {
-        controller = [[HNWebViewController alloc] initWithPost:post];
+        controller = safariVCForURL(post.URL);
     }
+    controller.hidesBottomBarWhenPushed = YES;
     return controller;
 }
 
@@ -31,7 +71,8 @@ UIViewController *viewControllerForURL(NSURL *url) {
         NSUInteger postID = [[url hn_valueForQueryParameter:@"id"] integerValue];
         controller = [[HNCommentViewController alloc] initWithPostID:postID];
     } else {
-        controller = [[HNWebViewController alloc] initWithURL:url];
+        controller = safariVCForURL(url);
     }
+    controller.hidesBottomBarWhenPushed = YES;
     return controller;
 }

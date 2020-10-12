@@ -8,9 +8,12 @@
 
 @import UIKit;
 
+#import <SafariServices/SafariServices.h>
+
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIViewController (hn_UISplitViewController)
+@interface UIViewController (hn_UISplitViewController) <SFSafariViewControllerDelegate>
 
 - (void)hn_configureLeftButtonAsDisplay;
 

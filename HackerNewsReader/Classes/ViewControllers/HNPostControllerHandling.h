@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class HNPost;
+@class HNPost, SFSafariViewController;
+
+extern SFSafariViewController *safariVCForURL(NSURL *url);
 
 extern UIViewController *viewControllerForPost(HNPost *post);
 
